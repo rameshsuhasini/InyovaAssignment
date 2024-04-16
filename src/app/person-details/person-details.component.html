@@ -1,0 +1,55 @@
+<div class="details">
+    <h2> Personal details</h2>
+
+    <form class="profileDetails" [formGroup]="profileDetailsForm" (ngSubmit)="onSubmit()">
+
+             <div class="formElement">
+            <label for="gender">Gender </label>
+            <div class="radioElement">
+                <input id="Male" type="radio" formControlName="gender" value="male" />
+                <label for="Male">Male</label>
+                <input id="Female" type="radio" formControlName="gender" value="female" />
+                <label for="Female">Female</label>
+            </div>
+        </div>
+
+        <div class="formElement">
+            <label for="first-name">First name </label>
+            <input id="first-name" type="text" placeholder="First name(as shown in passport / ID)" ng-required="true" ng-model="firstName" formControlName="firstName">
+                <!-- <div *ngIf="profileDetailsForm.get('firstName')?.invalid && (profileDetailsForm.get('firstName')?.dirty || profileDetailsForm.get('firstName')?.touched)">
+                    <div *ngIf="profileDetailsForm.get('firstName')?.errors.required">First Name is required.</div>
+                  </div> -->
+        </div>
+        
+        <div class="formElement">
+            <label for="last-name">Last name </label>
+            <input id="last-name" type="text" placeholder="Last name(as shown in passport / ID)" formControlName="lastName">
+        </div>
+
+        <div class="formElement dateofBirth" formGroupName="dob">
+            <label for="day">Date of birth </label>
+            <input id="day" type="text" placeholder="Day" formControlName="day">
+            <input id="month" type="text" placeholder="Month" formControlName="month">
+            <input id="year" type="text" placeholder="Year" formControlName="year">
+        </div>
+
+        <div class="formElement">
+            <label for="nationality">Nationality </label>
+            <input id="nationality" type="text" placeholder="Nationality" formControlName="nationality">
+        </div>
+
+        <div class="formElement">
+            <button class="submit" type="submit">Continue</button>
+        </div>
+
+        <div class="footer">
+            <img src="../../assets/images/check.png" />
+            <div class="content">
+                <p>Inyova guarantees highest investment standards.</p>
+                <a link=""> Learn more.</a>
+            </div>
+        </div>
+
+    </form>
+
+</div>

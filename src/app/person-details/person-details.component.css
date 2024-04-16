@@ -1,0 +1,85 @@
+input {
+    display:block;
+    width:100%;
+    padding-top:15px;
+}
+.formElement{
+    display:block;
+    width:100%;
+    padding: 5px 5px 20px 5px;
+    font-family:'Times New Roman', Times, serif;
+    font-size: medium;
+    font-weight: 700;
+}
+.submit{
+    color: white;
+    background-color: black;
+    width:100%;
+    padding:10px;
+}
+.details{
+    height:100vh !important;
+    background-color: lavender;
+    font-family: 'Times New Roman', Times, serif;
+}
+    
+.profileDetails{
+    padding: 30px;
+    background-color: white;
+}
+input[type='text']{
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: lightgrey;
+}
+input[type='radio']{
+    display: inline-block;
+    width: 25px;
+    margin: 10px 0px 0px -5px;
+}
+.radioElement label {
+    margin-right:10px;
+}
+.content {
+    display: inline-block;
+    font-size: 10px !important;
+    padding:0;
+    margin-left: 10px;
+    color: black;
+    font-weight: 600;
+}
+.footer img {
+    display: inline-block;
+    width:18px;
+    height:25px;
+}
+.footer{
+    margin-left:10px;
+}
+.content a {
+    text-decoration: underline;
+}
+.dateofBirth label{
+    display: block;
+}
+.dateofBirth input{
+    padding-top:15px;
+    display:inline-block;
+    width:60px;
+    margin-right:10px;
+}
+/* Styles for desktop */
+@media screen and (min-width: 768px) {
+    h2{
+        margin-left: 550px;
+    }
+  .profileDetails {
+    width: 300px;
+    margin-left: 550px;
+  }
+}
+.invalid-input {
+    color: red;
+}
+
+
