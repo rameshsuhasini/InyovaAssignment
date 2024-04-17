@@ -3,39 +3,56 @@
 
     <form class="profileDetails" [formGroup]="profileDetailsForm" (ngSubmit)="onSubmit()">
 
-             <div class="formElement">
-            <label for="gender">Gender </label>
+        <div class="formElement">
+            <label for="gender" [ngClass]="{'invalid-input': submitted && f['gender'].errors}"  >Gender </label>
             <div class="radioElement">
-                <input id="Male" type="radio" formControlName="gender" value="male" />
+                <input id="Male" type="radio" formControlName="gender" value="male"/>
                 <label for="Male">Male</label>
-                <input id="Female" type="radio" formControlName="gender" value="female" />
+                <input id="Female" type="radio" formControlName="gender" value="female"/>
                 <label for="Female">Female</label>
+                <!-- <div *ngIf="submitted && f['gender'].errors" class="invalid-feedback">
+                  </div> -->
             </div>
-        </div>
+        </div> 
 
         <div class="formElement">
-            <label for="first-name">First name </label>
-            <input id="first-name" type="text" placeholder="First name(as shown in passport / ID)" ng-required="true" ng-model="firstName" formControlName="firstName">
-                <!-- <div *ngIf="profileDetailsForm.get('firstName')?.invalid && (profileDetailsForm.get('firstName')?.dirty || profileDetailsForm.get('firstName')?.touched)">
-                    <div *ngIf="profileDetailsForm.get('firstName')?.errors.required">First Name is required.</div>
-                  </div> -->
+            <label for="first-name"   [ngClass]="{'invalid-input': submitted && f['firstName'].errors}">First name </label>
+            <input id="first-name" type="text" placeholder="First name(as shown in passport / ID)" formControlName="firstName">
+            <!-- <div *ngIf="submitted && f['firstName'].errors" class="invalid-feedback">
+                <div *ngIf="f['firstName'].errors['required']">firstname is required</div>
+              </div> -->
         </div>
         
         <div class="formElement">
-            <label for="last-name">Last name </label>
+            <label for="last-name"  [ngClass]="{'invalid-input': submitted && f['lastName'].errors}">Last name </label>
             <input id="last-name" type="text" placeholder="Last name(as shown in passport / ID)" formControlName="lastName">
+            <!-- <div *ngIf="submitted && f['lastName'].errors" class="invalid-feedback">
+                <div *ngIf="f['lastName'].errors['required']">Lastname is required</div>
+              </div> -->
         </div>
 
         <div class="formElement dateofBirth" formGroupName="dob">
-            <label for="day">Date of birth </label>
-            <input id="day" type="text" placeholder="Day" formControlName="day">
-            <input id="month" type="text" placeholder="Month" formControlName="month">
-            <input id="year" type="text" placeholder="Year" formControlName="year">
+            <label for="day"  [ngClass]="{'invalid-input': submitted && d['day'].errors && d['month'].errors && d['year'].errors}">Date of birth </label> 
+            <input id="day" type="number" placeholder="Day" formControlName="day" >
+            <!-- <div *ngIf="submitted && f['dob'].errors" class="invalid-feedback">
+                <div *ngIf="f['dob'].errors['required']">Day is required</div>
+              </div> -->
+            <input id="month" type="number" placeholder="Month" formControlName="month">
+            <!-- <div *ngIf="submitted && f['month'].errors" class="invalid-feedback">
+                <div *ngIf="f['month'].errors['required']">Month is required</div>
+              </div> -->
+            <input id="year" type="number" placeholder="Year" formControlName="year">
+            <!-- <div *ngIf="submitted && f['year'].errors" class="invalid-feedback">
+                <div *ngIf="f['year'].errors['required']">Year is required</div>
+              </div> -->
         </div>
 
         <div class="formElement">
-            <label for="nationality">Nationality </label>
+            <label for="nationality"  [ngClass]="{'invalid-input': submitted && f['nationality'].errors}">Nationality </label>
             <input id="nationality" type="text" placeholder="Nationality" formControlName="nationality">
+            <!-- <div *ngIf="submitted && f['nationality'].errors" class="invalid-feedback">
+                <div *ngIf="f['nationality'].errors['required']">Nationality is required</div>
+              </div> -->
         </div>
 
         <div class="formElement">

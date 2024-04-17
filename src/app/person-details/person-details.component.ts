@@ -21,27 +21,39 @@ export class PersonDetailsComponent implements OnInit{
     }),
     nationality: new FormControl('')
   });
+  submitted = false;
 
 
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.profileDetailsForm = this.formBuilder.group({
-firstName: ['', Validators.required],
+    gender: ['', Validators.required],
+    firstName: ['', Validators.required],
+    lastName: ['', Validators.required],
+    dob: this.formBuilder.group({
+      day: ['', Validators.required],
+      month: ['', Validators.required],
+      year: ['', Validators.required]
+    }),
+    nationality: ['', Validators.required]
     })
   }
 
   get f(): { [key: string]: AbstractControl } {
     return this.profileDetailsForm.controls;
   }
+  get d(): { [key: string]: AbstractControl}{
+      return ((this.profileDetailsForm.get('dob') as FormGroup).controls);
+  }
 
   onSubmit() {
-    if (!this.profileDetailsForm.valid) {
+    this.submitted = true;
+    if (this.profileDetailsForm.invalid) {
       return;
     }
     localStorage.setItem('form-data', JSON.stringify(this.profileDetailsForm.value));
     let formValue = localStorage.getItem('form-data');
-    console.log(formValue);
     alert("Profile details is saved successfully!!");
     window.location.reload();
   };

@@ -32,6 +32,11 @@ input[type='text']{
     border-width: 0 0 2px;
     border-color: lightgrey;
 }
+input[type='number']{
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: lightgrey;
+}
 input[type='radio']{
     display: inline-block;
     width: 25px;
@@ -78,8 +83,21 @@ input[type='radio']{
     margin-left: 550px;
   }
 }
-.invalid-input {
-    color: red;
+.invalid-feedback{
+    color:red;
+    font-size: 10px;
 }
+.invalid-input{
+    outline: 0;
+    border-width: 0 0 2px !important;
+    border-color: red !important;
+    accent-color: red;
+    color: red;
+
+    input[type="radio"]#Male {
+        accent-color: red;
+    }
+}
+
 
 
