@@ -79,7 +79,7 @@ input[type='radio']{
         margin-left: 550px;
     }
   .profileDetails {
-    width: 300px;
+    width: 350px;
     margin-left: 550px;
   }
 }
@@ -97,6 +97,9 @@ input[type='radio']{
     input[type="radio"]#Male {
         accent-color: red;
     }
+}
+h2{
+    padding: 20px !important;
 }
 
 

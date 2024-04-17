@@ -8,6 +8,42 @@
 .footer{
     height: 100vh;
     padding: 50px;
-    margin: 10px;
     display: flex;
+    background-color: lavender;
+}
+img{
+    width:100px;
+    height:35px;
+    margin-left: 10px;
+}
+.check {
+    width:30px !important;
+    height:30px !important
+}
+p{
+    margin:0 !important;
+    font-size: 10px;
+}
+a{
+    font-size: 10px;;
+}
+.content{
+    margin-left: 10px;;
+}
+.navbar-nav {
+    float:right !important;
+    margin-left: 10px;
+}
+.nav-item{
+    float: right;
+    margin-right:10px;
+    }
+.book{
+    background-color: white;
+    border: 1px solid lightgrey;
+    width:150px;
+    height:35px;
+}
+.navbar-expand-sm .navbar-collapse{
+    display: block !important;
 }
