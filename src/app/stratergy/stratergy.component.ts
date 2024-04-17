@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { PersonDetailsComponent } from '../../../src/app/person-details/person-details.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-stratergy',
@@ -8,5 +10,10 @@ import { Component } from '@angular/core';
   styleUrl: './stratergy.component.css'
 })
 export class StratergyComponent {
+  constructor(private router: Router){
+  }
 
+  openSteps(){
+    this.router.navigate(['/details'])
+  }
 }

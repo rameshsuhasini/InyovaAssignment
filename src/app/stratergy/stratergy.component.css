@@ -1,0 +1,13 @@
+.openAccount{
+    background-color: orangered;
+    color:white;
+    width:150px;
+    height:35px;
+    border: none;
+}
+.footer{
+    height: 100vh;
+    padding: 50px;
+    margin: 10px;
+    display: flex;
+}
